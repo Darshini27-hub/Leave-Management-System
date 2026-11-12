@@ -5,7 +5,6 @@ A MERN stack app where employees apply for leave, managers approve or reject it,
 ## Live Links
 - Frontend: https://leave-management-system-psi-nine.vercel.app
 - Backend: https://leave-management-system-7lhu.onrender.com
-- The backend is on Render's free plan, so the first load can take up to a minute.
 
 ## Tech Stack
 React (Vite), Tailwind CSS, Axios, Node.js, Express, MongoDB Atlas, Mongoose, JWT
@@ -17,20 +16,6 @@ React (Vite), Tailwind CSS, Axios, Node.js, Express, MongoDB Atlas, Mongoose, JW
 - Managers approve or reject team requests (comment required on rejection)
 - Leave days skip weekends and holidays, balance reduces on approval
 - Dashboards for all roles, responsive green UI
-
-## Run Locally
-Backend:
-cd server
-npm install
-Create server/.env (see .env.example), then:
-npm run seed
-npm run dev
-
-Frontend:
-cd client
-npm install
-Create client/.env with VITE_API_URL=http://localhost:5000/api, then:
-npm run dev
 
 ## Sample Logins
 - Admin: admin@company.com / admin123
