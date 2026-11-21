@@ -19,8 +19,8 @@ React (Vite), Tailwind CSS, Axios, Node.js, Express, MongoDB Atlas, Mongoose, JW
 
 ## Sample Logins
 - Admin: admin@company.com / admin123
-- Manager: manager@company.com / manager123
-- Employee: ravi@company.com / employee123
+- Manager: priya@company.com / manager123, suresh@company.com / manager123
+- Employee: ravi@company.com / employee123, anitha@company.com / employee123, divya@company.com / employee123
 
 ## Assumptions
 - A leave must be within one calendar year.
