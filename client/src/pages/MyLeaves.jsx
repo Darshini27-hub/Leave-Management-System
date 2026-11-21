@@ -75,10 +75,14 @@ const MyLeaves = () => {
                 </td>
                 <td className="px-4 py-3">{leave.reviewComment || "-"}</td>
                 <td className="px-4 py-3">
-                  {canCancel(leave) && (
-                    <Button color="red" onClick={() => setCancelId(leave._id)}>
-                      Cancel
-                    </Button>
+                  {leave.status === "pending" && new Date(leave.fromDate) < new Date(new Date().toISOString().split("T")[0]) ? (
+                    <span className="text-gray-500">Expired</span>
+                  ) : (
+                    canCancel(leave) && (
+                      <Button color="red" onClick={() => setCancelId(leave._id)}>
+                        Cancel
+                      </Button>
+                    )
                   )}
                 </td>
               </tr>

@@ -146,6 +146,9 @@ const reviewLeave=async(req,res,next)=>{
         if(leave.status !== "pending"){
             return res.status(400).json({success:false,message:"Only pending request can be reviewed"});
         }
+        if(leave.fromDate < getToday()){
+            return res.status(400).json({success:false,message:"This leave date has already passed"});
+        }
         if(status==="approved"){
             const year=leave.fromDate.getUTCFullYear();
             await createBalancesForUser(leave.user._id,year);

@@ -69,7 +69,7 @@ const LeaveRequestList = ({ title, fetchFunction }) => {
                   <StatusBadge status={leave.status} />
                 </td>
                 <td className="px-4 py-3">
-                  {leave.status === "pending" ? (
+                  {leave.status === "pending" && new Date(leave.fromDate) >= new Date(new Date().toISOString().split("T")[0]) ? (
                     <div className="flex gap-2">
                       <Button onClick={() => openModal(leave, "approved")}>Approve</Button>
                       <Button color="red" onClick={() => openModal(leave, "rejected")}>
@@ -77,7 +77,9 @@ const LeaveRequestList = ({ title, fetchFunction }) => {
                       </Button>
                     </div>
                   ) : (
-                    <span className="text-gray-500">{leave.reviewComment || "-"}</span>
+                    <span className="text-gray-500">
+                      {leave.status === "pending" ? "Expired" : (leave.reviewComment || "-")}
+                    </span>
                   )}
                 </td>
               </tr>
